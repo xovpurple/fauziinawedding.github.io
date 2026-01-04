@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Fauzi & Ina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400..700&family=Sacramento&family=Work+Sans&display=swap" rel="stylesheet">
+
+<body>
+    <div class="cover" id="cover">
+        <div class="cover-content">
+            <h1 style="font-size: large;">The Wedding Of</h2>
+            <h1 class="nama-cover-pengantin">Fauzi Hilman & Ina</h1>
+            <p>22.01.2026</p>
+            <button class="open-btn" onclick="openInvitation()">OPEN INVITATION</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 style="font-size: 2.1rem;" class="couple-names">Fauzi Hilman & Ina</h1>
+                <img src="gambar/IMG_7323-2.jpg" alt="Wedding">
+                <p style="font-size: 1.2rem; color: #666;">Allah's blessings message يَتَفَكَّرُونَ </p>
+                <p  style="font-size: 1.2rem; color: #666;">Meaning: "And among the signs of His power is that He created for you wives of your own kind, so that you would be inclined and feel at ease with them, and He made among you a feeling of love and affection. Indeed, in that there are truly signs for a person who thinks."
+                <br>
+                (QS. Ar-Rum: 21)
+                </p>
+            </div>
+        </section>
+
+        <section class="bride-groom">
+            <div class="couple-container">
+                <div class="person1">
+                    <img src="gambar/man_profile.jpg" alt="">
+                    <h3>Fauzi Hilman Wicaksono</h3>
+                    <p class="label">Second Son of</p>
+                    <p>Bapak Sugeng Wicaksono</p>
+                    <p>and</p>
+                    <p>Ibu Tri Mulyani</p>
+                </div>
+                <div class="person2">
+                    <img src="gambar/IMG_7410.jpg" alt="">
+                    <h3>Ina Septiyana Sari</h3>
+                    <p class="label">Second Daughter of</p>
+                    <p>Bapak Tugiyono</p>
+                    <p>and</p>
+                    <p>Ibu Sri Pudjiastuti</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="save-date">
+            <h2 class="fade-save">SAVE THE DATE</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">22 Januari 2026</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Detik</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="events">
+            <h2>Wedding Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <h3>Akad Nikah</h3>
+                    <p><strong>Thursday, 22 Januari 2025</strong></p>
+                    <p>09:00 WIB - 10:00 WIB</p>
+                    <p style="margin-top: 20px;">Rumah mempelai wanita</p>
+                    <p>Jl. Sulawesi RT/RW 05/12, Kel Gunung Simping Kec Cilacap Tengah Kab Cilacap</p>
+                    <a href="https://maps.app.goo.gl/wZVp3Yc5iyeim8Kr7" class="map-btn" target="_blank">Lihat Lokasi</a>
+                </div>
+                <div class="event-card">
+                    <h3>Resepsi</h3>
+                    <p><strong>Thursday, 22 Januari 2025</strong></p>
+                    <p>10:00 WIB - Selesai</p>
+                    <p style="margin-top: 20px;">Rumah mempelai wanita</p>
+                    <p>Jl. Sulawesi RT/RW 05/12, Kel Gunung Simping Kec Cilacap Tengah Kab Cilacap</p>
+                    <a href="https://maps.app.goo.gl/wZVp3Yc5iyeim8Kr7" class="map-btn" target="_blank">Lihat Lokasi</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gift">
+            <h2>Wedding Gift</h2>
+            <p class="gift-subtitle">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br>Namun jika memberi adalah ungkapan tanda kasih, Anda dapat memberi gift ke no. rekening di bawah ini.</p>
+            <div class="gift-cards">
+                <div class="gift-card">
+                    <div class="bank-icon">💳</div>
+                    <h3>Mempelai Wanita</h3>
+                    <p class="bride-name">a/n Ina Septiyana Sari</p>
+                    <div class="bank-info">
+                        <p class="bank-name">Bank BCA</p>
+                        <p class="account-number" id="accountBride">0961267225</p>
+                        <button class="copy-btn" onclick="copyAccount('accountBride', 'btnBride')">
+                            <span id="btnBride">Salin Nomor Rekening</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="bank-icon">💳</div>
+                    <h3>Mempelai Pria</h3>
+                    <p class="bride-name">a/n Fauzi Hilman Wicaksono</p>
+                    <div class="bank-info">
+                        <p class="bank-name">Bank Mandiri</p>
+                        <p class="account-number" id="accountGroom">1800010001420</p>
+                        <button class="copy-btn" onclick="copyAccount('accountGroom', 'btnGroom')">
+                            <span id="btnGroom">Salin Nomor Rekening</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gift-note">
+                <p>💝 Terima kasih atas perhatian dan kehadirannya</p>
+            </div>
+        </section>
+
+<section class="gallery">
+    <h2>Precious Moments</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="gambar/IMG_7466.jpg" alt="Moment 1">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7468.jpg" alt="Moment 2">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7475.jpg" alt="Moment 3">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7432.jpg" alt="Moment 4">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7471.jpg" alt="Moment 5">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7477.jpg" alt="Moment 6">
+        </div>
+        <div class="gallery-item">
+            <img src="gambar/IMG_7451.jpg" alt="Moment 7">
+        </div><!--  -->
+        <div class="gallery-item">
+            <img src="gambar/IMG_7396.jpg" alt="Moment 8">
+        </div>
+    </div>
+</section>
+
+
+        <section class="footer">
+            <h3>Thank You</h3>
+            <p>It is an honor and happiness for us if you can come to give us your blessing.</p>
+            <p style="margin-top: 30px; font-style: italic;">Fauzi Hilman & Ina</p>
+        </section>
+
+        <section class="made">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+            <div class="social-container">
+                <a href="https://www.instagram.com/fzhl_/" class="icon-wrapper"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="icon-wrapper"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="icon-wrapper"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <p>@2025 Fauzi Hilman Invitation</p>
+        </section>
+    </div>
+
+    <button class="music-toggle" id="musicToggle" title="Toggle Music">♪</button>
+    <audio id="bgMusic" src="gamelan_background_music.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>

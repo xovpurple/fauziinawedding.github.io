@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Cover Section */
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(110, 40, 50, 0.7), rgba(80, 30, 40, 0.8)),
+                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23a0616a" width="100" height="100"/></svg>');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+.nama-cover-pengantin {
+    font-family: 'alex brush', cursive;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cover.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cover-content {
+    text-align: center;
+    color: white;
+}
+
+.cover h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.cover p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.open-btn {
+    padding: 15px 40px;
+    background: white;
+    color: #8b3a4e;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
+}
+
+.open-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.05);
+}
+
+/* Container */
+.container {
+    max-width: 100%;
+    background: #fff;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.couple-names {
+    font-family: 'dancing script', cursive;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(139, 58, 78, 0.1), rgba(139, 58, 78, 0.05));
+    padding: 100px 20px;
+}
+
+.hero-content img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #8b3a4e;
+    margin-bottom: 30px;
+}
+
+.couple-names {
+    font-size: 3rem;
+    color: #8b3a4e;
+    margin: 20px 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Bride and Groom Section */
+.bride-groom {
+    background: white;
+    padding: 80px 20px;
+    display: flex; /* Tambahkan ini */
+    justify-content: center; /* Tambahkan ini */
+    align-items: center; /* Tambahkan ini */
+    min-height: 100vh; /* Opsional: agar full height */
+}
+
+.couple-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+.person1 img, .person2 img{
+    width: 260px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #8b3a4e;
+    margin-bottom: 30px;
+}
+
+.person1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideRight 0.8s ease-out forwards;
+}
+
+
+.person2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideRight {
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .couple-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .person1,
+    .person2 {
+        transform: translateX(0); /* matikan slide kiri-kanan */
+        margin-bottom: 40px;
+    }
+
+    .person1 img,
+    .person2 img {
+        width: 220px;
+    }
+}
+
+
+/* transisi nama couple */
+
+
+.person1 h3, .person2 h3 {
+    font-size: 2rem;
+    color: #8b3a4e;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.person1 p, .person2 p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+.person1 .label, .person2 .label {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* Save the Date Section */
+.save-date {
+    background: linear-gradient(135deg, #8b3a4e, #a0616a);
+    color: white;
+    padding: 100px 20px;
+}
+
+.save-date h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.fade-save {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s
+}
+.fade-save.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px 30px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.countdown-item .number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.countdown-item .label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Events Section */
+.events {
+    background: #f9f9f9;
+    padding: 80px 20px;
+}
+
+.events h2 {
+    font-size: 2.5rem;
+    color: #8b3a4e;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.event-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
+    color: #8b3a4e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.event-card p {
+    color: #666;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #8b3a4e;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+    background: #6d2d3c;
+    transform: translateY(-2px);
+}
+
+/* Gift Section */
+.gift {
+    background: white;
+    padding: 80px 20px;
+}
+
+.gift h2 {
+    font-size: 2.5rem;
+    color: #8b3a4e;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.gift-subtitle {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.gift-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.gift-card {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(139, 58, 78, 0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    border: 2px solid #f0e6e8;
+    transition: all 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(139, 58, 78, 0.15);
+}
+
+.bank-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.gift-card h3 {
+    font-size: 1.3rem;
+    color: #8b3a4e;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.bride-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.bank-info {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px dashed #e0d0d5;
+}
+
+.bank-name {
+    font-size: 1.1rem;
+    color: #8b3a4e;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.account-number {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f5f6;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.copy-btn {
+    width: 100%;
+    padding: 12px 25px;
+    background: #8b3a4e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
+}
+
+.copy-btn:hover {
+    background: #6d2d3c;
+    transform: scale(1.02);
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-btn.copied {
+    background: #4a8b3a;
+}
+
+.gift-note {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.gift-note p {
+    color: #8b3a4e;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Gallery Section - PERBAIKI */
+.gallery {
+    background: #f9f9f9;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #8b3a4e;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* PERBAIKAN 1: Grid dengan auto-fill untuk responsif */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* PERBAIKAN 2: Container gallery-item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid rgba(139, 58, 78, 0.4);
+    box-shadow: 0 4px 12px rgba(139, 58, 78, 0.15);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    
+    /* PERBAIKAN 3: Aspect ratio sesuai gambar asli */
+    aspect-ratio: 3/4; /* Sesuaikan dengan rasio foto */
+    height: 350px; /* Tinggi tetap */
+    width: 100%; /* Lebar fleksibel */
+}
+
+/* PERBAIKAN 4: Styling untuk gambar */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini yang paling penting! */
+    object-position: center;
+    display: block;
+    
+    /* PERBAIKAN 5: Optimasi rendering */
+    image-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Smooth loading */
+    transition: transform 0.3s ease;
+}
+
+/* PERBAIKAN 6: Hover effect */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item:hover {
+    box-shadow: 0 8px 25px rgba(139, 58, 78, 0.25);
+    border-color: rgba(139, 58, 78, 0.6);
+}
+
+/* PERBAIKAN 7: Loading state */
+.gallery-item img.loading {
+    opacity: 0.5;
+}
+
+.gallery-item img.loaded {
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        height: 300px;
+        border-radius: 12px;
+        border: 2px solid rgba(139, 58, 78, 0.4);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .gallery-item {
+        height: 350px;
+    }
+}
+
+/* Force gambar render dengan kualitas tinggi - OPTIMIZED */
+.gallery-item img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+
+
+/* Footer Section */
+.footer {
+    background: linear-gradient(135deg, #8b3a4e, #a0616a);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.footer p {
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* Music Toggle Button */
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #8b3a4e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cover h1 {
+        font-size: 2rem;
+    }
+
+    .couple-names {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .countdown-item {
+        padding: 15px 20px;
+        min-width: 80px;
+    }
+
+    .countdown-item .number {
+        font-size: 2rem;
+    }
+
+    .gift-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .account-number {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* made */
+.social-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    background:  white;
+    padding: 20px;
+}
+
+.icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.icon-wrapper:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
